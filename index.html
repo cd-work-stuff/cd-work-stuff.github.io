@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Query String Parser</title>
+</head>
+<body>
+  <h1>Parsed Query String Values</h1>
+  <div id="output"></div>
+
+  <script>
+    // Function to parse query string into an object
+    function parseQueryString() {
+      const params = new URLSearchParams(window.location.search);
+      return {
+        merchant_id: params.get('merchant_id'),
+        employee_id: params.get('employee_id'),
+        client_id: params.get('client_id'),
+        code: params.get('code')
+      };
+    }
+
+    // Parse the actual query string from the browser
+    const parsedParams = parseQueryString();
+
+    // Display the parsed values
+    const outputDiv = document.getElementById('output');
+    outputDiv.innerHTML = `
+      <p><strong>Merchant ID:</strong> ${parsedParams.merchant_id || 'Not provided'}</p>
+      <p><strong>Employee ID:</strong> ${parsedParams.employee_id || 'Not provided'}</p>
+      <p><strong>Client ID:</strong> ${parsedParams.client_id || 'Not provided'}</p>
+      <p><strong>Code:</strong> ${parsedParams.code || 'Not provided'}</p>
+    `;
+  </script>
+</body>
+</html>
