@@ -17,8 +17,8 @@
         merchant_id: params.get('merchant_id'),
         employee_id: params.get('employee_id'),
         client_id: params.get('client_id'),
-        code: params.get('code'),
-        access_token: params.get('access_token')
+        code: params.get('code')
+
       };
     }
 
@@ -31,8 +31,7 @@
       <p><strong>Merchant ID:</strong> ${parsedParams.merchant_id || 'Not provided'}</p>
       <p><strong>Employee ID:</strong> ${parsedParams.employee_id || 'Not provided'}</p>
       <p><strong>Client ID:</strong> ${parsedParams.client_id || 'Not provided'}</p>
-      <p><strong>Code:</strong> ${parsedParams.code || 'Not provided'}</p>
-      <p><strong>Access_token:</strong> ${parsedParams.access_token || 'Not provided'}</p>
+      <p><strong>Code:</strong> ${parsedParams.code || 'Not provided'}</p>     
     `;
   </script>
 </body>
